@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>01_Verschluesselung</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+<!--        <exec.mainClass>edu.thkoeln.itsec.verschluesselung.symmetrisch.Verschluesselung</exec.mainClass>-->
+            <!--<exec.mainClass>edu.thkoeln.itsec.verschluesselung.asymmetrisch.SimpleRsaCommunication</exec.mainClass>-->
+            <exec.mainClass>edu.thkoeln.itsec.verschluesselung.hashing.HashesAndSignatures</exec.mainClass>
+    </properties>
+</project>
