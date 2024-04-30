@@ -58,7 +58,7 @@ public class PerformSymmetricEncryption {
         System.out.println("\nDecrpyting test file...");
         AbstractSymmetricEncryptor symEncrypter1 = new SymmetricEncryptor(
                 AES_CIPER_MODE, true);
-        symEncrypter.decryptFile(SIM_CYPHERTEXT_OUTPUT_FILE_PATH.toFile(),
+        symEncrypter1.decryptFile(SIM_CYPHERTEXT_OUTPUT_FILE_PATH.toFile(),
                 PLAINTEXT_SIM_DEC_FILE_PATH.toFile());
 
         /* Check if encrypting and decrypting worked. */

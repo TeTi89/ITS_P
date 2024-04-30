@@ -22,7 +22,6 @@ public class SimpleRsaCommunication {
         AbstractRsaCommunicationPartner bob = new RsaCommunicationPartner();
 
         /* Share the keys between the partners.*/
-        // TODO implement key exchange.
         alice.setPartnerKey(bob.getPublicKey());
         bob.setPartnerKey(alice.getPublicKey());
 
