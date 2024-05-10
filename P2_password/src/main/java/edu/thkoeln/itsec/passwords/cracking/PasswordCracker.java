@@ -1,11 +1,17 @@
 package edu.thkoeln.itsec.passwords.cracking;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+//extra imports
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 /**
  *
@@ -59,7 +65,7 @@ public class PasswordCracker {
      * computation of SHA3-512 hashes.
      */
     public static void crackSimple() throws NoSuchAlgorithmException {
-        if (login("tobiasurban", "TH Koeln")) {
+        if (login("tobiasurban", "passwort")) {
             System.out.println("Yay! The password 'passwort' worked.");
         } else {
             System.out.println("The password is wrong.");
@@ -74,11 +80,32 @@ public class PasswordCracker {
      * computation of SHA3-512 hashes.
      */
     public static void crackAdvanced() throws NoSuchAlgorithmException {
-        if (login("johndoe", "TH Koeln")) {
+        // The password is in the list of the 100000 most common passwords.
+        // The list is available at ./resources/10_million_password_list_top_100000.txt
+        /*
+        if (login("johndoe", "passwort")) {
             System.out.println("Yay! The password 'passwort' worked.");
         } else {
             System.out.println("The password is wrong.");
         }
+        */
+
+        //String filePath = Paths.get(System.getProperty("user.dir"), "ITS_P","P2_password","resources","10_million_password_list_top_100000.txt").toString();
+        String filePath = Paths.get(System.getProperty("user.dir"), "ITS_P","P2_password","resources","3,000,000_combo_list.txt").toString();
+        
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (login("johndoe", line)) {
+                    System.out.println("Yay! The password '" + line + "' worked.");
+                    return;
+                }
+            }
+            System.out.println("The password not found in the list.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -89,11 +116,32 @@ public class PasswordCracker {
      * computation of SHA3-512 hashes.
      */
     public static void crackBruteForce() throws NoSuchAlgorithmException {
+        /*
         if (login("martinamusterfrau", "TH Koeln")) {
             System.out.println("Yay! The password 'passwort' worked.");
         } else {
             System.out.println("The password is wrong.");
         }
+        */
+        String password;
+        for (int i = 0; i < ALPHABET.length; i++) {
+            for (int j = 0; j < ALPHABET.length; j++) {
+                for (int k = 0; k < ALPHABET.length; k++) {
+                    for (int l = 0; l < ALPHABET.length; l++) {
+                        for (int m = 0; m < ALPHABET.length; m++) {
+                          password = ""+ ALPHABET[i] + ALPHABET[j] + ALPHABET[k] + ALPHABET[l] + ALPHABET[m];
+                          if(login("martinamusterfrau", password)){
+                            System.out.println("Yay! The password '" + password + "' worked.");
+                            return;
+                          };
+
+                        }
+                        
+                    }
+                }
+            }
+        }
+        System.out.println("The password not found.");
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
