@@ -9,8 +9,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-<!--        <exec.mainClass>edu.thkoeln.itsec.verschluesselung.symmetrisch.Verschluesselung</exec.mainClass>-->
-            <!--<exec.mainClass>edu.thkoeln.itsec.verschluesselung.asymmetrisch.SimpleRsaCommunication</exec.mainClass>-->
-            <exec.mainClass>edu.thkoeln.itsec.verschluesselung.hashing.HashesAndSignatures</exec.mainClass>
+<!--        <exec.mainClass>symmetrisch.Verschluesselung</exec.mainClass>-->
+            <!--<exec.mainClass>asymmetrisch.SimpleRsaCommunication</exec.mainClass>-->
+            <exec.mainClass>hashing.HashesAndSignatures</exec.mainClass>
     </properties>
 </project>
