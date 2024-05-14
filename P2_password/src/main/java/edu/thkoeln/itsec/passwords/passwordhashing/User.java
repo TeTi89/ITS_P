@@ -21,17 +21,19 @@ public class User extends AbstractUser {
      * @throws java.lang.Exception
      */
     public User(String name, String password) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
+        setUsername(name);
+
     }
 
     @Override
     protected void hashPassword(String password) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public boolean verifyPassword(String password) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

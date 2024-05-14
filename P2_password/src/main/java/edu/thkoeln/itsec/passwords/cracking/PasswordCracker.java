@@ -134,14 +134,12 @@ public class PasswordCracker {
                             System.out.println("Yay! The password '" + password + "' worked.");
                             return;
                           };
-
                         }
-                        
                     }
                 }
             }
         }
-        System.out.println("The password not found.");
+        System.out.println("The password is not found.");
     }
 
     public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
