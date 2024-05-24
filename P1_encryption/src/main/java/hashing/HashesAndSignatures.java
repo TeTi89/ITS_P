@@ -1,7 +1,7 @@
-package edu.thkoeln.itsec.verschluesselung.hashing;
+package hashing;
 
-import edu.thkoeln.itsec.verschluesselung.asymmetrisch.AbstractRsaCommunicationPartner;
-import edu.thkoeln.itsec.verschluesselung.asymmetrisch.RsaCommunicationPartner;
+import asymmetrisch.AbstractRsaCommunicationPartner;
+import asymmetrisch.RsaCommunicationPartner;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;

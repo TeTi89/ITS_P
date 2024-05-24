@@ -1,4 +1,4 @@
-package edu.thkoeln.itsec.verschluesselung.symmetrisch;
+package symmetrisch;
 
 import java.io.File;
 import java.nio.file.Files;

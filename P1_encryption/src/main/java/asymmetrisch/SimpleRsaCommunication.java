@@ -1,4 +1,4 @@
-package edu.thkoeln.itsec.verschluesselung.asymmetrisch;
+package asymmetrisch;
 
 import java.util.Arrays;
 
