@@ -19,7 +19,7 @@ public class PasswordHashing {
      * Path to store the dummy user "database".
      */
     private static final Path DB_PATH = Paths.get(
-            System.getProperty("user.dir"),"ITS_P","P2_password","resources", "user_db.txt");
+            System.getProperty("user.dir"),"P2_password","resources", "user_db.txt");
 
     /**
      * Creates three dummy users.

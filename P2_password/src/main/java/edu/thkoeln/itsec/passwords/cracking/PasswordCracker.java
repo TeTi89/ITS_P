@@ -10,7 +10,7 @@ import java.util.Map;
 
 //extra imports
 import java.io.BufferedReader;
-import java.io.File;
+//import java.io.File;
 import java.io.FileReader;
 
 /**
@@ -66,7 +66,7 @@ public class PasswordCracker {
      */
     public static void crackSimple() throws NoSuchAlgorithmException {
         if (login("tobiasurban", "passwort")) {
-            System.out.println("Yay! The password 'passwort' worked.");
+            System.out.println("Assignment 1: Yay! The password 'passwort' worked.");
         } else {
             System.out.println("The password is wrong.");
         }
@@ -91,13 +91,13 @@ public class PasswordCracker {
         */
 
         //String filePath = Paths.get(System.getProperty("user.dir"), "ITS_P","P2_password","resources","10_million_password_list_top_100000.txt").toString();
-        String filePath = Paths.get(System.getProperty("user.dir"), "ITS_P","P2_password","resources","3,000,000_combo_list.txt").toString();
+        String filePath = Paths.get(System.getProperty("user.dir"), "P2_password","resources","3,000,000_combo_list.txt").toString();
         
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (login("johndoe", line)) {
-                    System.out.println("Yay! The password '" + line + "' worked.");
+                    System.out.println("Assignment 2: Yay! The password '" + line + "' worked.");
                     return;
                 }
             }
@@ -125,13 +125,14 @@ public class PasswordCracker {
         */
         String password;
         for (int i = 0; i < ALPHABET.length; i++) {
+            System.out.println("Assignment 3: Working hard to find the password...");
             for (int j = 0; j < ALPHABET.length; j++) {
                 for (int k = 0; k < ALPHABET.length; k++) {
                     for (int l = 0; l < ALPHABET.length; l++) {
                         for (int m = 0; m < ALPHABET.length; m++) {
                           password = ""+ ALPHABET[i] + ALPHABET[j] + ALPHABET[k] + ALPHABET[l] + ALPHABET[m];
                           if(login("martinamusterfrau", password)){
-                            System.out.println("Yay! The password '" + password + "' worked.");
+                            System.out.println("Assignment 3: Yay! The password '" + password + "' worked.");
                             return;
                           };
                         }
